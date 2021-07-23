@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/react-social-network/static/css/main.2e8e292b.chunk.css",
+    "main.js": "/react-social-network/static/js/main.77062e1d.chunk.js",
+    "main.js.map": "/react-social-network/static/js/main.77062e1d.chunk.js.map",
+    "runtime-main.js": "/react-social-network/static/js/runtime-main.f0289e53.js",
+    "runtime-main.js.map": "/react-social-network/static/js/runtime-main.f0289e53.js.map",
+    "static/js/2.6e1a23ff.chunk.js": "/react-social-network/static/js/2.6e1a23ff.chunk.js",
+    "static/js/2.6e1a23ff.chunk.js.map": "/react-social-network/static/js/2.6e1a23ff.chunk.js.map",
+    "static/css/3.b709d5cc.chunk.css": "/react-social-network/static/css/3.b709d5cc.chunk.css",
+    "static/js/3.35b6bc76.chunk.js": "/react-social-network/static/js/3.35b6bc76.chunk.js",
+    "static/js/3.35b6bc76.chunk.js.map": "/react-social-network/static/js/3.35b6bc76.chunk.js.map",
+    "static/css/4.74636a0f.chunk.css": "/react-social-network/static/css/4.74636a0f.chunk.css",
+    "static/js/4.187f1392.chunk.js": "/react-social-network/static/js/4.187f1392.chunk.js",
+    "static/js/4.187f1392.chunk.js.map": "/react-social-network/static/js/4.187f1392.chunk.js.map",
+    "static/js/5.6446f66c.chunk.js": "/react-social-network/static/js/5.6446f66c.chunk.js",
+    "static/js/5.6446f66c.chunk.js.map": "/react-social-network/static/js/5.6446f66c.chunk.js.map",
+    "index.html": "/react-social-network/index.html",
+    "static/css/3.b709d5cc.chunk.css.map": "/react-social-network/static/css/3.b709d5cc.chunk.css.map",
+    "static/css/4.74636a0f.chunk.css.map": "/react-social-network/static/css/4.74636a0f.chunk.css.map",
+    "static/css/main.2e8e292b.chunk.css.map": "/react-social-network/static/css/main.2e8e292b.chunk.css.map",
+    "static/js/2.6e1a23ff.chunk.js.LICENSE.txt": "/react-social-network/static/js/2.6e1a23ff.chunk.js.LICENSE.txt",
+    "static/js/3.35b6bc76.chunk.js.LICENSE.txt": "/react-social-network/static/js/3.35b6bc76.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/react-social-network/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f0289e53.js",
+    "static/js/2.6e1a23ff.chunk.js",
+    "static/css/main.2e8e292b.chunk.css",
+    "static/js/main.77062e1d.chunk.js"
+  ]
+}
