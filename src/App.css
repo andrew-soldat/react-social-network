@@ -1,0 +1,17 @@
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "header header"
+  "sidebar main";
+  grid-template-rows: 60px 100vh;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+.wrapper-content {
+	grid-area: main;
+	background-color: rgb(173, 255, 153);
+	padding: 10px;
+}

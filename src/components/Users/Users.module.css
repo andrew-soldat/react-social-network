@@ -1,0 +1,53 @@
+.title {
+   font-size: 25px;
+   margin: 0px 0px 40px 0px;
+}
+.userWrapper {
+   display: flex;
+   margin: 0px 0px 30px 30px;
+}
+.userColumn {
+   width: 120px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.userFhoto {
+   width: 80px;
+   height: 80px;
+   max-width: 100%;
+   border-radius: 50px;
+   object-fit: cover;
+}
+.button {
+   margin: 10px 0px 0px 0px;
+   padding: 10px 20px;
+   background-color: green;
+   font-size: 15px;
+}
+.userContent {
+   margin: 0px 0px 0px 20px;
+   height: 100px;
+   width: 100%;
+   max-width: 500px;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+   border: 1px solid #f7f7f7;
+   border-radius: 10px;
+}
+.userName {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   font-size: 20px;
+   line-height: 1.2;
+}
+.userLocation {
+   font-size: 20px;
+   line-height: 1.2;
+}
+.userCountry {
+}
+.userCity {
+}

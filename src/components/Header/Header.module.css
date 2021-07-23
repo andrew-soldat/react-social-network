@@ -1,0 +1,48 @@
+.header {
+   background-color: #538dff;
+   grid-area: header;
+   padding: 10px;
+}
+
+.logo {
+   height: 40px;
+   pointer-events: none;
+}
+
+.loginBlock {
+	float: right;
+}
+.loginBlock a {
+	color:#fff;
+}
+.btn {
+	margin: 0px 0px 0px 10px;
+	display: inline-block;
+	padding: 3px 5px;
+	color:#000;
+	background-color: #fff;
+	border: 1px solid #000;
+	transition: all 0.3s ease 0s;
+}
+.btn:hover {
+	background-color: #000;
+	color:#fff;
+}
+.logout {
+	margin: 0px 0px 0px 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .logo {
+      animation: App-logo-spin infinite 20s linear;
+   }
+}
+
+@keyframes App-logo-spin {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}

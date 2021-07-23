@@ -1,0 +1,28 @@
+h3 {
+	margin: 0px 0px 10px 0px;
+	font-size: 25px;
+	font-weight: 700;
+}
+.title {
+	font-size: 20px;
+	color:#000;
+	margin: 0px 0px 10px 0px;
+}
+.textarea {
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #b6b6b6;
+}
+.textarea:focus {
+	border: 1px solid #000;
+}
+.button {
+	margin: 10px 0px 0px 0px;
+	padding: 5px 10px;
+	border: 1px solid #000;
+	background-color: #fff;
+}
+.postWrapper {
+	padding: 20px 0 0 20px;
+}
