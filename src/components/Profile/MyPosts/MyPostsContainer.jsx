@@ -1,4 +1,3 @@
-import React from 'react';
 import {
    addPostActionCreator
 } from '../../../Redux/profile-reducer';

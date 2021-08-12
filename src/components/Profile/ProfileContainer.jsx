@@ -1,12 +1,12 @@
 import React from 'react';
 import Profile from './Profile.jsx';
 import { connect } from 'react-redux';
-import { getUserProfileThunk, getStatusThunk, updateStatusThunk} from './../../Redux/profile-reducer';
+import { getUserProfileThunk, getStatusThunk, updateStatusThunk, savePhoto} from './../../Redux/profile-reducer';
 import { withRouter } from 'react-router';
 import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
-	componentDidMount() {
+	refreshProfile() {
 		let userId = this.props.match.params.userId;
 		if (!userId) {
 			userId = this.props.autorizedUserId;
@@ -16,10 +16,29 @@ class ProfileContainer extends React.Component {
 		}
 		this.props.getUserProfileThunk(userId);
 		this.props.getStatusThunk(userId);
+	}
+
+	componentDidMount() {
+		this.refreshProfile();
    }
 
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		if (this.props.match.params.userId !== prevProps.match.params.userId) {
+         this.refreshProfile();
+      }
+	}
+
    render() {		
-      return <Profile {...this.props} profile={this.props.profile} status={this.props.status || "--"}  updateStatus={this.props.updateStatusThunk }/>;
+      return (
+         <Profile
+            {...this.props}
+            isOwner={!!this.props.match.params.userId}
+            profile={this.props.profile}
+            status={this.props.status || '--'}
+            updateStatus={this.props.updateStatusThunk}
+				savePhoto={this.props.savePhoto}
+         />
+      );
    }
 }
 
@@ -33,8 +52,8 @@ let mapStateToProps = (state) => {
 };
 
 export default compose(
-	connect(mapStateToProps, { getUserProfileThunk, getStatusThunk, updateStatusThunk } ),
-	withRouter
+   connect(mapStateToProps, { getUserProfileThunk, getStatusThunk, updateStatusThunk, savePhoto }),
+   withRouter
 )(ProfileContainer);
 
 

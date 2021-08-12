@@ -34,7 +34,6 @@ export default class ProfileStatus extends React.Component {
 		}
 		let a = this.props;
 		let b = this.state;
-		
 	}
 
 	render() {
