@@ -13,7 +13,7 @@ const AddNewPostForm = (props) => {
          <Field
             name="newPostText"
             component={Textarea}
-            className={s.formControl} validate={[required, maxLength10]} 
+            className={s.formControl} validate={[required, maxLength10]}
          />
          <button className={s.button}>Add Post</button>
       </form>
