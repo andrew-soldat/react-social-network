@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import s from './ProfileInfo.module.css';
+import styleForm from '../../common/FormsControls/FormsControls.module.css';
 import Preloader from './../../common/Preloader';
 import userPhoto from './../../../assets/images/user.png';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
@@ -12,17 +13,6 @@ export const ProfileInfo = (props) => {
       return <Preloader />;
    }
 
-   // let [status, setStatus] = useState(props.status);
-
-	// useEffect(() => {
-	// 	setStatus(props.status);
-	// }, [props.status]);
-
-	// const deactivateEditMode = () => {
-	// 	setEditMode(false);
-	// 	props.updateStatus(status);
-	// };
-
 	const onMainPhotoSelected = (e) => {
 		if (e.target.files.length) {
 			props.savePhoto(e.target.files[0]);
@@ -30,8 +20,11 @@ export const ProfileInfo = (props) => {
 	}
 
 	const onSubmit = (formData) => {
-		props.saveProfile(formData);
-		
+		props.saveProfile(formData).then (
+			() => {
+				setEditMode(false);
+			}
+		);
    };
 
    return (
@@ -56,7 +49,7 @@ export const ProfileInfo = (props) => {
          )}
 
          {editMode ? (
-            <ProfileDataForm profile={props.profile} onSubmit={onSubmit}/>
+            <ProfileDataForm initialValues={props.profile} profile={props.profile} onSubmit={onSubmit}/>
          ) : (
             <ProfileData
                profile={props.profile}
@@ -64,15 +57,6 @@ export const ProfileInfo = (props) => {
                goToEditMode={() => {setEditMode(true);}}
             />
          )}
-
-         <div>
-            <div className={s.block}>
-               <b>Contacts :</b>
-            </div>
-            {Object.entries(props.profile.contacts).map(([key, value]) => {
-               return <Contacts contactTitle={key} contactValue={value} />;
-            })}
-         </div>
 
          <div className={s.block}>{props.profile.userId}</div>
       </div>
@@ -82,7 +66,6 @@ export const ProfileInfo = (props) => {
 const ProfileData = ({ profile, isOwner, goToEditMode }) => {
    return (
       <div>
-         {isOwner && <button onClick={goToEditMode}>Edit</button>}
          <div className={s.block}>
             <b>Full name: </b>
             {profile.fullName}
@@ -93,10 +76,23 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
          </div>
          {!profile.lookingForAJob && (
             <div className={s.block}>
-               <b>About me: </b>
+               <b>My professional skills: </b>
                {profile.lookingForAJobDescription}
             </div>
          )}
+			<div className={s.block}>
+				<b>About me: </b>
+				{profile.aboutMe}
+			</div>
+			<div>
+            <div className={s.block}>
+               <b>Contacts :</b>
+            </div>
+            {Object.entries(profile.contacts).map(([key, value]) => {
+               return <Contacts key={key} contactTitle={key} contactValue={value} />;
+            })}
+         </div>
+         {isOwner && <button className={styleForm.button} onClick={goToEditMode}>Edit</button>}
       </div>
    );
 };

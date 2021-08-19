@@ -22,6 +22,11 @@ h3 {
 	padding: 5px 10px;
 	border: 1px solid #000;
 	background-color: #fff;
+	transition: all 0.3s ease 0s;
+}
+.button:hover {
+	background-color: #000;
+	color:#fff;
 }
 .postWrapper {
 	padding: 20px 0 0 20px;

@@ -1,3 +1,7 @@
+.formControl input {
+	padding: 10px 5px;
+}
+
 .formControl.error input,
 .formControl.error textarea {
 	border: 1px solid red;
@@ -8,5 +12,31 @@
 	color: red;
 }
 .line {
+	display: flex;
 	margin: 0px 0px 10px 0px;
+}
+.formSummaryError {
+	margin: 0px 0px 10px 0px;
+	display: inline-block;
+	padding: 5px;
+	color: red;
+	font-size: 15px;
+	border: 1px solid red;
+}
+.label {
+	margin: 0px 0px 0px 10px;
+}
+.button {
+	display: block;
+	padding: 5px 10px;
+	border: 1px solid #000;
+	background-color: #000;
+	font-size: 16px;
+	color:#fff;
+	transition: all 0.3s ease 0s;
+}
+.button:hover {
+	background-color: #fff;
+	color:#000;
+	border: 1px solid #000;
 }

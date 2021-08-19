@@ -5,7 +5,7 @@ export const FormControl = ({ input, meta: { touched, error }, children }) => {
    const hasError = touched && error;
    return (
       <div className={s.formControl + ' ' + (hasError ? s.error : '')}>
-         <div>{children}</div>
+         {children}
          {hasError && <span>{error}</span>}
       </div>
    );
@@ -30,7 +30,7 @@ export const createField = (placeholder, name, component, validators='', props={
 				component={component}
 				validate={validators}
 				{...props}
-			/>{text}
+			/><div className={s.label}>{text}</div>
 		</div>
 	)
 }

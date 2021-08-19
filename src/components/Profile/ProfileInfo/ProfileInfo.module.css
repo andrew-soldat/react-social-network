@@ -1,9 +1,23 @@
+.top {
+	margin: 0px 0px 20px 0px;
+}
 .top img {
 	max-width: 100px;
 	border-radius: 50px;
 }
 .block {
-	margin: 0px 0px 20px 0px;
+	margin: 20px 0px 20px 0px;
+}
+.button {
+	margin: 0px 0px 10px 0px;
+	padding: 5px 10px;
+	border: 1px solid #000;
+	background-color: #fff;
+	transition: all 0.3s ease 0s;
+}
+.button:hover {
+	background-color: #000;
+	color:#fff;
 }
 .itemContact {
 	margin: 0px 0px 20px 20px;
