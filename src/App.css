@@ -1,12 +1,13 @@
 .wrapper {
   max-width: 1200px;
   width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   display: grid;
   grid-template-areas: 
   "header header"
   "sidebar main";
-  grid-template-rows: 60px 100vh;
+  grid-template-rows: 60px 100%;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
@@ -14,4 +15,13 @@
 	grid-area: main;
 	background-color: rgb(173, 255, 153);
 	padding: 10px;
+	position: relative;
+}
+.page404 {
+	height: 100%;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	font-size: 25px;
+	font-weight: 700;
 }

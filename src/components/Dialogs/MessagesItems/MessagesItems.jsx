@@ -4,13 +4,12 @@ import s from './../Dialogs.module.css'
 
 const MessagesItems = (props) => {
 	return (
-		<div className={s.message}>
+		<div key={props.id} className={s.message}>
 			<div className={s.userPhoto}>
 			</div>
-			<div className={s.text}>
+			<div  className={s.text}>
 				{props.message}
 			</div>
-			
 		</div>
 	)
 }

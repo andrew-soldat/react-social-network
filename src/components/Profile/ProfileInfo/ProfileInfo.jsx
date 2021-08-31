@@ -74,7 +74,7 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
             <b>Looking for a job: </b>
             {profile.lookingForAJob ? 'Yes' : 'No'}
          </div>
-         {!profile.lookingForAJob && (
+         {profile.lookingForAJob && (
             <div className={s.block}>
                <b>My professional skills: </b>
                {profile.lookingForAJobDescription}

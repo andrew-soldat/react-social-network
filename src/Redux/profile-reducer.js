@@ -1,5 +1,6 @@
 import { usersAPI, profileAPI } from '../api/api';
 import { stopSubmit } from 'redux-form';
+import { nanoid } from 'nanoid';
 
 const ADD_POST = 'ADD-POST',
    DELETE_POST = 'DELETE-POST',
@@ -9,9 +10,9 @@ const ADD_POST = 'ADD-POST',
 
 let initialState = {
    postsData: [
-      { post: 'It is my first post', id: '1' },
+      { post: 'It is my first post', id: 1 },
       { post: 'Hi', id: '2' },
-      { post: 'Yo', id: '3' },
+      { post: 'Yo', id: '30' },
       { post: 'Good!', id: '4' },
       { post: 'No', id: '5' },
    ],
@@ -24,7 +25,7 @@ const profileReducer = (state = initialState, action) => {
       case ADD_POST:
          let newPost = {
             post: action.newPostText,
-            id: '8',
+            id: nanoid(),
          };
 
          return {
@@ -68,7 +69,6 @@ export const deletePostActionCreator = (postId) => ({ type: 'DELETE-POST', postI
 export const setUserProfile = (profile) => ({ type: 'SET_USER_PROFILE', profile });
 export const setStatus = (status) => ({ type: 'SET_STATUS', status });
 export const savePhotoSuccess = (photos) => ({ type: 'SAVE_PHOTO_SUCCESS', photos });
-// export const saveProfileSuccess = (profile) => ({ type: 'SAVE_PROFILE_SUCCESS', profile });
 
 export const getUserProfileThunk = (userId) => async (dispatch) => {
 	const response = await usersAPI.getProfile(userId);
@@ -83,10 +83,14 @@ export const getStatusThunk = (userId) => async (dispatch) => {
 }
 
 export const updateStatusThunk = (status) => async (dispatch) => {
-	const response = await profileAPI.updateStatus(status);
-
-	if (response.data.resultCode === 0) {
-		dispatch(setStatus(status));
+	try {
+		const response = await profileAPI.updateStatus(status);
+	
+		if (response.data.resultCode === 0) {
+			dispatch(setStatus(status));
+		}
+	} catch (error) {
+		console.log(error.message);
 	}
 }
 

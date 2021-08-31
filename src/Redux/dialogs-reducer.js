@@ -1,4 +1,5 @@
-import { Switch } from 'react-router';
+
+import { nanoid } from 'nanoid';
 
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
@@ -24,7 +25,7 @@ const dialogsReducer = (state = initialState, action) => {
       case SEND_MESSAGE: 
 			let body = {
 				message: action.newMessage,
-				id: '8',
+				id: nanoid(),
 			};
 
 			return {
