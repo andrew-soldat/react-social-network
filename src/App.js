@@ -6,7 +6,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Login from './components/Login/Login';
-import { BrowserRouter, Route, Redirect, withRouter, Switch } from 'react-router-dom';
+import { HashRouter, Route, Redirect, withRouter, Switch } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
 import { Provider, connect } from 'react-redux';
 import { initializeApp } from './Redux/app-reducer';
@@ -20,7 +20,7 @@ const UsersContainer = React.lazy(() => import('./components/Users/UsersContaine
 
 class App extends React.Component {
 	catchAllUnhandledErrors = (reason, promise) => {
-		console.log(reason)
+
 	}
 
 	componentDidMount() {
@@ -34,6 +34,8 @@ class App extends React.Component {
 	}
 
 	render () {
+		console.log(!this.props.initialized);
+		
 		// if (!this.props.initialized) {
 		// 	return <Preloader />
 		// }
@@ -67,11 +69,11 @@ const mapStateToProps = (state) => ({
 const AppContainer = /*compose(withRouter,*/ connect(mapStateToProps, { initializeApp })(App)/*)*/;
 
 const ReactSocialNetwork = (props) => {
-	return <BrowserRouter>
+	return <HashRouter>
 				<Provider store={store}>
 					<AppContainer />
 				</Provider>
-			</BrowserRouter>
+			</HashRouter>
 }
 
 export default ReactSocialNetwork;
