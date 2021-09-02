@@ -20,7 +20,7 @@ const UsersContainer = React.lazy(() => import('./components/Users/UsersContaine
 
 class App extends React.Component {
 	catchAllUnhandledErrors = (reason, promise) => {
-
+		console.log(reason)
 	}
 
 	componentDidMount() {
@@ -34,8 +34,6 @@ class App extends React.Component {
 	}
 
 	render () {
-		console.log(!this.props.initialized);
-		
 		// if (!this.props.initialized) {
 		// 	return <Preloader />
 		// }

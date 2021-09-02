@@ -5,6 +5,9 @@
 	max-width: 100px;
 	border-radius: 50px;
 }
+.status {
+	margin: 20px 0px 20px 0px;
+}
 .block {
 	margin: 20px 0px 20px 0px;
 }
@@ -18,9 +21,6 @@
 .button:hover {
 	background-color: #000;
 	color:#fff;
-}
-.itemContact {
-	margin: 0px 0px 20px 20px;
 }
 .block span {
 	line-height: 36px;
@@ -38,4 +38,14 @@
 	padding: 5px 10px;
 	border-radius: 5px;
 	border: 1px solid #000000;
+}
+.wrapperSocialIcon {
+	display: flex;
+}
+.itemContact {
+	margin: 0px 10px 10px 10px;
+}
+.itemContact img {
+	width: 40px;
+	height: 40px;
 }

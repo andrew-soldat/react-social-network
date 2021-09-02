@@ -87,10 +87,13 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
 			<div>
             <div className={s.block}>
                <b>Contacts :</b>
+					{Object.entries(profile.contacts).map(([key, value]) => {
+						if (value) {
+							return <Contacts key={key} contactTitle={key} contactValue={value} />;
+						}
+						return false;
+					})}
             </div>
-            {Object.entries(profile.contacts).map(([key, value]) => {
-               return <Contacts key={key} contactTitle={key} contactValue={value} />;
-            })}
          </div>
          {isOwner && <button className={styleForm.button} onClick={goToEditMode}>Edit</button>}
       </div>
@@ -98,7 +101,5 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
 };
 
 const Contacts = ({contactTitle, contactValue}) => {
-   return <div className={s.itemContact}>
-				<b>{contactTitle}:</b> {contactValue}
-			</div>
+   return <a className={s.itemContact} href={contactValue} target="_blank" rel='noreferrer'><img src={`icon-${contactTitle}.svg`} alt={contactTitle} /></a>
 };
