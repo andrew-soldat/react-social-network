@@ -30,7 +30,10 @@ export const createField = (placeholder, name, component, validators='', props={
 				component={component}
 				validate={validators}
 				{...props}
-			/><div className={s.label}>{text}</div>
+			/>
+			{text &&
+				<div className={s.label}>{text}</div>
+			}
 		</div>
 	)
 }

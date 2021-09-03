@@ -29,16 +29,17 @@ export const ProfileInfo = (props) => {
 
    return (
       <div>
-         <div className={s.top}>
+         <div className={s.mainPtoto}>
             <img
-               className={s.user}
+               className={s.me}
                src={props.profile.photos.large || userPhoto}
                alt=""
             />
-         </div>
-         <div>
             {props.isOwner && (
-               <input type={'file'} onChange={onMainPhotoSelected} />
+				<div className={s.inputChangePhoto}>
+						<label for="ChangePhoto">Update photo</label>
+						<input id="ChangePhoto" type={'file'} onChange={onMainPhotoSelected} />
+				</div>
             )}
          </div>
          {props.isOwner && (
@@ -47,7 +48,7 @@ export const ProfileInfo = (props) => {
                updateStatus={props.updateStatus}
             />
          )}
-
+			<div className={s.hr}></div>
          {editMode ? (
             <ProfileDataForm initialValues={props.profile} profile={props.profile} onSubmit={onSubmit}/>
          ) : (
@@ -85,7 +86,7 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
 				{profile.aboutMe}
 			</div>
 			<div>
-            <div className={s.block}>
+            <div className={s.row}>
                <b>Contacts :</b>
 					{Object.entries(profile.contacts).map(([key, value]) => {
 						if (value) {
@@ -101,5 +102,5 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
 };
 
 const Contacts = ({contactTitle, contactValue}) => {
-   return <a className={s.itemContact} href={contactValue} target="_blank" rel='noreferrer'><img src={`icon-${contactTitle}.svg`} alt={contactTitle} /></a>
+   return <a className={s.itemContact} href={contactValue} target="_blank" rel='noreferrer'><img src={`img/icon-${contactTitle}.svg`} alt={contactTitle} /></a>
 };

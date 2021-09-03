@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import s from './ProfileInfo.module.css';
+import styleForm from '../../common/FormsControls/FormsControls.module.css';
 
 const ProfileStatusWithHooks = (props) => {
 	let [editMode, setEditMode] = useState(false);
@@ -13,7 +14,11 @@ const ProfileStatusWithHooks = (props) => {
 		setEditMode(true);
 	};
 
-	const deactivateEditMode = () => {
+	const deactivateEditMode = (e) => {
+      setEditMode(false);
+		// setStatus(e.currentTarget.value);
+   };
+	const saveStatus = () => {
       setEditMode(false);
 		props.updateStatus(status);
    };
@@ -24,21 +29,25 @@ const ProfileStatusWithHooks = (props) => {
 	
 	return (
       <div className={s.status}>
-         {!editMode && (
+         {/* {!editMode && ( */}
             <div>
-               <b>Status:</b> <span onDoubleClick={activateEditMode}>
+               <b>Status:</b> <span className={s.changeStatus} onClick={activateEditMode}>
                   {props.status || 'set status'}
                </span>
             </div>
-         )}
+         {/* )} */}
          {editMode && (
-            <div>
-               <b>Status:</b> <input
+            <div className={s.inputChangeStatus}> 
+               <input
                   onChange={onStatusChange}
                   autoFocus={true}
-                  onBlur={deactivateEditMode}
+                  // onBlur={deactivateEditMode}
                   value={status}
                />
+					<div className={s.rowButton}>
+					<button onClick={saveStatus} className={styleForm.button}>Save</button>
+					<button onClick={deactivateEditMode} className={styleForm.buttonCancel}>Cancel</button>
+					</div>
             </div>
          )}
       </div>
