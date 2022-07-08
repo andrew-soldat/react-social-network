@@ -5,9 +5,6 @@ import { reduxForm } from 'redux-form';
 import { createField, Input, Textarea } from '../../common/FormsControls/FormsControls';
 
 const ProfileDataForm = (props) => {
-	console.log(props.error);
-	console.log(props.profile);
-	
    return (
       <div>
          <form onSubmit={props.handleSubmit}>

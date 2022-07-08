@@ -37,7 +37,7 @@ export const ProfileInfo = (props) => {
             />
             {props.isOwner && (
 				<div className={s.inputChangePhoto}>
-						<label for="ChangePhoto">Update photo</label>
+						<label htmlFor="ChangePhoto">Update photo</label>
 						<input id="ChangePhoto" type={'file'} onChange={onMainPhotoSelected} />
 				</div>
             )}

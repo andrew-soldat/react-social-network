@@ -6,12 +6,10 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import Login from './components/Login/Login';
-import { HashRouter, Route, Redirect, withRouter, Switch } from 'react-router-dom';
+import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
 import { Provider, connect } from 'react-redux';
 import { initializeApp } from './Redux/app-reducer';
-import Preloader from './components/common/Preloader';
-import { compose } from 'redux';
 import store from './Redux/redux-store';
 import './index.css';
 
@@ -20,7 +18,7 @@ const UsersContainer = React.lazy(() => import('./components/Users/UsersContaine
 
 class App extends React.Component {
 	catchAllUnhandledErrors = (reason, promise) => {
-		console.log(reason)
+
 	}
 
 	componentDidMount() {
